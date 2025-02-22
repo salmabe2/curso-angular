@@ -1,0 +1,10 @@
+<h1>Dashboard</h1>
+<hr />
+
+<router-outlet />
+<p>User:</p>
+<pre>{{ user() | json }}</pre>
+
+<br>
+<!-- <span routerLink="/auth/login">return to login</span> -->
+<button (click)="onLogout()">Cerrar sesión</button>

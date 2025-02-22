@@ -1,0 +1,36 @@
+export class Person {
+	// Es común hacerlo así en Angular pero no cuando definimos una clase como un tipo de dato
+	// public name?: string;
+	// private address?: string;
+
+	constructor(
+		public firstName: string,
+		public lastname: string,
+		private address: string = 'No Address'
+	) {}
+}
+
+// export class Hero extends Person {
+// 	constructor(
+// 		public alterEgo: string,
+// 		public age: number,
+// 		public realName: string
+// 	) {
+// 		super(realName, 'New York');
+// 	}
+// }
+
+export class Hero {
+	constructor(
+		public alterEgo: string,
+		public age: number,
+		public realName: string,
+		public person: Person
+	) {
+		// this.person = new Person(realName);
+	}
+}
+
+const tony = new Person('Tony', 'Stark', 'New York');
+const ironman = new Hero('Ironman', 45, 'Tony', tony);
+console.log(ironman);
